@@ -27,8 +27,7 @@ class Queue {
       this.end = node;
   }
 
-  dequeue()
-    {
+  dequeue() {
       //if the queue is empty, there is nothing to return
      if (this.front === null) {
          return;
@@ -40,41 +39,36 @@ class Queue {
          this.end = null;
      }
      return node.value;
- }
   }
 
-  // peek() {
-  //   // Return the next item in the queue.
-  //   return ;
-  // }
+  show() {
+    // Return the next item in the queue.
+    return this.front.value;
+  }
 
-  // all() {
-  //   // Return all items in the queue.
-  //   let node = this.top;
-  //   const arr = [];
+  all() {
+    let node = this.first;
+    const arr = [];
+     while (node) {
+         arr.push(node.value);
+         node = node.next;
+     }
+   return arr;
+  }
+}
+    
 
-  //   let i = 0;
-  //   let item = {};
-  //   let size = this.size()
-  //   while (i < size) {
-  //     item = this.storage[i];
-  //     i++;
-  //     console.log(item);
-  //     return
-  //   }
-  // }
-
-  let test = new Queue(); 
-  //console.log('initial size: ', test.size());
-  //console.log('initially empty: ', test.isEmpty());
-  test.enqueue(1);
-  test.enqueue(2);
-  test.enqueue(3);
-  console.log(test.end)
-  //console.log('size: ', test.size());
-  //console.log('next element to be removed is: ', test.peek());
-  //console.log(test.all());
-  //console.log(test.size());
+// let test = new Queue(); 
+//console.log('initial size: ', test.size());
+//console.log('initially empty: ', test.isEmpty());
+// test.enqueue(1);
+// test.enqueue(2);
+// test.enqueue(3);
+// console.log(test.end)
+//console.log('size: ', test.size());
+//console.log('next element to be removed is: ', test.peek());
+//console.log(test.all());
+//console.log(test.size());
 
 
 module.exports = Queue
